@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <Label x:Name="label" Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="36,28,0,0"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="88,71,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="233"/>
+        <Label x:Name="label" Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="21,23,0,0"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="88,71,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="233"/>
         <CheckBox x:Name="checkBox" Content="CheckBox" HorizontalAlignment="Left" Margin="3,73,0,0" VerticalAlignment="Top"/>
         <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="369,74,0,0" VerticalAlignment="Top" Width="75"/>
 
