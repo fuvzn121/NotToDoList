@@ -5,12 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NotToDoList"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        <Label x:Name="label" Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="21,23,0,0"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="88,71,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="233"/>
-        <CheckBox x:Name="checkBox" Content="CheckBox" HorizontalAlignment="Left" Margin="3,73,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="369,74,0,0" VerticalAlignment="Top" Width="75"/>
+        Title="MainWindow">
+    <Grid RenderTransformOrigin="0.573,0.583">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="76*"/>
+            <ColumnDefinition Width="441*"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="label" Content="リスト" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="28,25,0,0"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="50,71,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="301" Grid.ColumnSpan="2" IsReadOnly="True"/>
+        <Button x:Name="button" Content="参照" HorizontalAlignment="Left" Margin="293,74,0,0" VerticalAlignment="Top" Width="48" Grid.Column="1" Click="button_Click"/>
+        <Button x:Name="button_Copy" Content="登録" HorizontalAlignment="Left" Margin="363,74,0,0" VerticalAlignment="Top" Width="48" Grid.Column="1" Click=""/>
+        <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="317" Margin="50,131,0,0" VerticalAlignment="Top" Width="473" Grid.ColumnSpan="2"/>
 
     </Grid>
 </Window>
