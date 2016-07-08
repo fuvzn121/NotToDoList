@@ -34,6 +34,7 @@ namespace NotToDoList {
         private void Add_Click(object sender, RoutedEventArgs e) {
             /// 項目を動的に追加する
             listBox.Items.Add(textBox.Text);
+            textBox.Text = "";
         }
 
         private void Del_Click(object sender, RoutedEventArgs e) {
@@ -46,5 +47,6 @@ namespace NotToDoList {
             listBox.Items.RemoveAt(listBox.SelectedIndex);
 
         }
+        private void 
     }
 }
