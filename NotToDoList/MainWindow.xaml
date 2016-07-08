@@ -5,17 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NotToDoList"
         mc:Ignorable="d"
-        Title="MainWindow">
+        Title="MainWidndow">
     <Grid RenderTransformOrigin="0.573,0.583">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="76*"/>
-            <ColumnDefinition Width="441*"/>
+            <ColumnDefinition Width="112*"/>
+            <ColumnDefinition Width="15*"/>
+            <ColumnDefinition Width="106*"/>
+            <ColumnDefinition Width="16*"/>
+            <ColumnDefinition Width="511*"/>
         </Grid.ColumnDefinitions>
         <Label x:Name="label" Content="リスト" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="28,25,0,0"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="50,71,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="301" Grid.ColumnSpan="2" IsReadOnly="True"/>
-        <Button x:Name="button" Content="参照" HorizontalAlignment="Left" Margin="293,74,0,0" VerticalAlignment="Top" Width="48" Grid.Column="1" Click="button_Click"/>
-        <Button x:Name="button_Copy" Content="登録" HorizontalAlignment="Left" Margin="363,74,0,0" VerticalAlignment="Top" Width="48" Grid.Column="1" Click=""/>
-        <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="317" Margin="50,131,0,0" VerticalAlignment="Top" Width="473" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="50,74,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="301" Grid.ColumnSpan="5" IsReadOnly="True"/>
+        <Button x:Name="show_button" Content="参照" HorizontalAlignment="Left" Margin="117,74,0,0" VerticalAlignment="Top" Width="48" Grid.Column="4" Click="Show_Click" Height="23" RenderTransformOrigin="0.396,0.652"/>
+        <Button x:Name="add_button" Content="登録" HorizontalAlignment="Left" Margin="50,108,0,0" VerticalAlignment="Top" Width="48" Height="23" Click="Add_Click"/>
+        <Button x:Name="del_button" Content="削除" HorizontalAlignment="Left" Margin="0,108,0,0" VerticalAlignment="Top" Width="48" Height="23" Grid.Column="1" Grid.ColumnSpan="2" Click="Del_Click" />
+        <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="229" Margin="53,148,0,0" VerticalAlignment="Top" Width="359" Grid.ColumnSpan="5">
+            <ScrollViewer Height="225" Width="345"/>
+        </ListBox>
 
     </Grid>
 </Window>

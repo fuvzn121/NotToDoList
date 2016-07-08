@@ -23,13 +23,28 @@ namespace NotToDoList {
         public MainWindow() {
             InitializeComponent();
         }
-        private void button_Click(object sender, RoutedEventArgs e) {
+        private void Show_Click(object sender, RoutedEventArgs e) {
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.FileName = "";
             ofd.DefaultExt = "*.*";
             if (ofd.ShowDialog() == true) {
                 textBox.Text = ofd.FileName;
             }
+        }
+        private void Add_Click(object sender, RoutedEventArgs e) {
+            /// 項目を動的に追加する
+            listBox.Items.Add(textBox.Text);
+        }
+
+        private void Del_Click(object sender, RoutedEventArgs e) {
+            /// 項目を削除します
+            // 選択項目がない場合は処理をしない
+            if (listBox.SelectedItems.Count == 0)
+                return;
+
+            // 選択された項目を削除
+            listBox.Items.RemoveAt(listBox.SelectedIndex);
+
         }
     }
 }
