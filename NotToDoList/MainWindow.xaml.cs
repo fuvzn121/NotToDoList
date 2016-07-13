@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Linq;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -19,7 +18,7 @@ namespace NotToDoList {
     /// <summary>
     /// MainWindow.xaml の相互作用ロジック
     /// </summary>
-    public partial class MainWindow : MahApps.Metro.Controls.MetroWindow {
+    public partial class MainWindow : Window {
         public MainWindow() {
             InitializeComponent();
         }
@@ -34,6 +33,7 @@ namespace NotToDoList {
         private void Add_Click(object sender, RoutedEventArgs e) {
             /// 項目を動的に追加する
             listBox.Items.Add(textBox.Text);
+            textBox.Text = "";
         }
 
         private void Del_Click(object sender, RoutedEventArgs e) {
@@ -43,7 +43,10 @@ namespace NotToDoList {
                 return;
 
             // 選択された項目を削除
-            listBox.Items.RemoveAt(listBox.SelectedIndex);
+            while (listBox.SelectedItems.Count > 0)
+                listBox.Items.Remove(
+                    listBox.SelectedItems[0]
+                );
 
         }
     }

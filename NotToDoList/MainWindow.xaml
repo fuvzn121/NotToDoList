@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NotToDoList"
         mc:Ignorable="d"
-        Title="MainWidndow" Height="662.5" Width="781.5">
+        Title="NotToDoList" Height="662.5" Width="781.5">
     <Viewbox Margin="-12,0,0,0" RenderTransformOrigin="0.573,0.583" Stretch="Fill">
         <Grid Height="514" Width="772">
             <Label x:Name="label" Content="リスト" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="28,25,0,0" Height="30" Width="111"/>
             <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="50,74,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="442" IsReadOnly="True"/>
-            <Button x:Name="show_button" Content="参照" HorizontalAlignment="Left" Margin="533,76,0,0" VerticalAlignment="Top" Width="48" Click="Show_Click" Height="23" RenderTransformOrigin="0.396,0.652"/>
+            <Button x:Name="show_button" Content="参照" HorizontalAlignment="Left" Margin="538,74,0,0" VerticalAlignment="Top" Width="48" Click="Show_Click" Height="23" RenderTransformOrigin="0.396,0.652"/>
             <Button x:Name="add_button" Content="登録" HorizontalAlignment="Left" Margin="50,108,0,0" VerticalAlignment="Top" Width="48" Height="23" Click="Add_Click"/>
             <Button x:Name="del_button" Content="削除" HorizontalAlignment="Left" Margin="114,108,0,0" VerticalAlignment="Top" Width="48" Height="23" Click="Del_Click" />
-            <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="229" Margin="53,148,0,0" VerticalAlignment="Top" Width="533"/>
+            <ListBox x:Name="listBox" SelectionMode="Multiple" HorizontalAlignment="Left" Height="229" Margin="53,148,0,0" VerticalAlignment="Top" Width="533"/>
 
         </Grid>
     </Viewbox>
