@@ -48,6 +48,10 @@ namespace NotToDoList {
             textBox1.Text = "";
             textBox2.Text = "";
         }
+
+        private void OnDelButtonClick(object sender, RoutedEventArgs e) {
+            m_dt.Rows[dataGrid.SelectedIndex].Delete();
+        }
         
     }
 

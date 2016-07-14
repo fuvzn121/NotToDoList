@@ -16,7 +16,7 @@
             <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="89,73,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="405" IsReadOnly="True" Grid.Column="1"/>
             <Button x:Name="show_button" Content="参照" HorizontalAlignment="Left" Margin="516,74,0,0" VerticalAlignment="Top" Width="48" Click="Show_Click" Height="23" RenderTransformOrigin="0.396,0.652" Grid.Column="1"/>
             <Button x:Name="add_button" Content="登録" HorizontalAlignment="Left" Margin="17,148,0,0" VerticalAlignment="Top" Width="48" Height="23" Grid.Column="1" Click="OnAddButtonClick"/>
-            <Button x:Name="del_button" Content="削除" HorizontalAlignment="Left" Margin="83,148,0,0" VerticalAlignment="Top" Width="48" Height="23"  Grid.Column="1" />
+            <Button x:Name="del_button" Content="削除" HorizontalAlignment="Left" Margin="83,148,0,0" VerticalAlignment="Top" Width="48" Height="23"  Grid.Column="1" Click="OnDelButtonClick"/>
             <TextBox x:Name="textBox1" Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="89,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.03,0.409"/>
             <Label x:Name="label1" Content="登録名" Grid.Column="1" HorizontalAlignment="Left" Margin="17,112,0,0" VerticalAlignment="Top" Height="24"/>
             <Label x:Name="label3" Content="時間" Grid.Column="1" HorizontalAlignment="Left" Margin="245,112,0,0" VerticalAlignment="Top" Height="24"/>
