@@ -13,15 +13,24 @@
                 <ColumnDefinition Width="589*"/>
             </Grid.ColumnDefinitions>
             <Label x:Name="label" Content="リスト" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="28,25,0,0" Height="30" Width="111" Grid.ColumnSpan="2"/>
-            <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="17,74,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="442" IsReadOnly="True" Grid.Column="1"/>
-            <Button x:Name="show_button" Content="参照" HorizontalAlignment="Left" Margin="502.126,74,0,0" VerticalAlignment="Top" Width="48" Click="Show_Click" Height="23" RenderTransformOrigin="0.396,0.652" Grid.Column="1"/>
-            <Button x:Name="add_button" Content="登録" HorizontalAlignment="Left" Margin="17,148,0,0" VerticalAlignment="Top" Width="48" Height="23" Click="Add_Click" Grid.Column="1"/>
-            <Button x:Name="del_button" Content="削除" HorizontalAlignment="Left" Margin="83,148,0,0" VerticalAlignment="Top" Width="48" Height="23" Click="Del_Click" Grid.Column="1" />
-            <TextBox x:Name="textBox1" Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="68,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="89,73,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="405" IsReadOnly="True" Grid.Column="1"/>
+            <Button x:Name="show_button" Content="参照" HorizontalAlignment="Left" Margin="516,74,0,0" VerticalAlignment="Top" Width="48" Click="Show_Click" Height="23" RenderTransformOrigin="0.396,0.652" Grid.Column="1"/>
+            <Button x:Name="add_button" Content="登録" HorizontalAlignment="Left" Margin="17,148,0,0" VerticalAlignment="Top" Width="48" Height="23" Grid.Column="1"/>
+            <Button x:Name="del_button" Content="削除" HorizontalAlignment="Left" Margin="83,148,0,0" VerticalAlignment="Top" Width="48" Height="23"  Grid.Column="1" />
+            <TextBox x:Name="textBox1" Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="89,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
             <Label x:Name="label1" Content="登録名" Grid.Column="1" HorizontalAlignment="Left" Margin="17,112,0,0" VerticalAlignment="Top" Height="24"/>
             <ComboBox x:Name="comboBox" Grid.Column="1" HorizontalAlignment="Left" Margin="257,113,0,0" VerticalAlignment="Top" Width="71" SelectionChanged="comboBox_SelectionChanged" Height="23"/>
             <Label x:Name="label3" Content="時間" Grid.Column="1" HorizontalAlignment="Left" Margin="218,112,0,0" VerticalAlignment="Top" Height="24"/>
-            <DataGrid Name="dataGrid" />
+            <Label x:Name="label2" Content="ファイル選択" Grid.Column="1" HorizontalAlignment="Left" Margin="17,73,0,0" VerticalAlignment="Top" Height="24"/>
+            <DataGrid x:Name="dataGrid" Grid.Column="1" HorizontalAlignment="Left" Margin="17,190,0,0" VerticalAlignment="Top" RenderTransformOrigin="-17.923,2.7" Height="225" Width="547">
+                <DataGrid.Columns>
+                    <DataGridCheckBoxColumn Header="有効化"/>
+                    <DataGridTextColumn Header="名前"/>
+                    <DataGridComboBoxColumn Header="時間"/>
+                    <DataGridTextColumn Header="ファイルの場所"/>
+
+                </DataGrid.Columns>
+            </DataGrid>
 
         </Grid>
     </Viewbox>
