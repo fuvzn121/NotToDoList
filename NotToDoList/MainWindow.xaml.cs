@@ -8,9 +8,6 @@ using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 
 namespace NotToDoList {
-    /// <summary>
-    /// MainWindow.xaml の相互作用ロジック
-    /// </summary>
     public partial class MainWindow : Window {
         private DataTable m_dt;
         
@@ -18,6 +15,7 @@ namespace NotToDoList {
             InitializeComponent();
             m_dt = new DataTable("TaskData");
 
+            m_dt.Columns.Add(new DataColumn("State", typeof(string)));
             m_dt.Columns.Add(new DataColumn("Name", typeof(string)));
             m_dt.Columns.Add(new DataColumn("Time", typeof(string)));
             m_dt.Columns.Add(new DataColumn("Path", typeof(string)));
@@ -33,10 +31,10 @@ namespace NotToDoList {
         }
 
         private void OnAddButtonClick(object sender, RoutedEventArgs e) {
-            if (textBox.Text == null || textBox1.Text == null || textBox2.Text == null) return;
 
             DataRow newRowItem;
             newRowItem = m_dt.NewRow();
+            newRowItem["State"] = "未起動";
             newRowItem["Name"] = textBox1.Text;
             newRowItem["Time"] = textBox2.Text + "分";
             newRowItem["Path"] = textBox.Text;
@@ -44,6 +42,7 @@ namespace NotToDoList {
             m_dt.Rows.Add(newRowItem);
 
             dataGrid.DataContext = m_dt;
+            dataGrid.HeadersVisibility = DataGridHeadersVisibility.Column;
 
             textBox.Text = "";
             textBox1.Text = "";
@@ -51,6 +50,8 @@ namespace NotToDoList {
         }
         
     }
+
+
 
     
 }

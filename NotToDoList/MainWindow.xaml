@@ -24,9 +24,9 @@
             <DataGrid x:Name="dataGrid" Grid.Column="1" HorizontalAlignment="Left" Margin="17,190,0,0" VerticalAlignment="Top" RenderTransformOrigin="-17.923,2.7" Height="225" Width="547" IsReadOnly="True"
                   AutoGenerateColumns="False" DataContext="{Binding}" ItemsSource="{Binding}">
                 <DataGrid.Columns>
-                    <DataGridCheckBoxColumn Header="有効化" Width="50"/>
+                    <DataGridTextColumn Header="起動状態" Width="60" Binding="{Binding State}"/>
                     <DataGridTextColumn Header="名前" Width="180" Binding="{Binding Name}"/>
-                    <DataGridTextColumn Header="時間" Binding="{Binding Time}" Width="50"/>
+                    <DataGridTextColumn Header="制限時間" Binding="{Binding Time}" Width="60"/>
                     <DataGridTextColumn Header="ファイルの場所" Width="*" Binding="{Binding Path}"/>
                 </DataGrid.Columns>
             </DataGrid>
