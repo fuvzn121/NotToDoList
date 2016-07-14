@@ -28,8 +28,6 @@
                     <DataGridTextColumn Header="名前" Width="180" Binding="{Binding Name}"/>
                     <DataGridTextColumn Header="時間" Binding="{Binding Time}" Width="50"/>
                     <DataGridTextColumn Header="ファイルの場所" Width="*" Binding="{Binding Path}"/>
-                    
-
                 </DataGrid.Columns>
             </DataGrid>
             <TextBox x:Name="textBox2" Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="279,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="54" RenderTransformOrigin="0.284,0.409"/>

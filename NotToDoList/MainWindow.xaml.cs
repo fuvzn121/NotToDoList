@@ -33,11 +33,14 @@ namespace NotToDoList {
         }
 
         private void OnAddButtonClick(object sender, RoutedEventArgs e) {
+            if (textBox.Text == null || textBox1.Text == null || textBox2.Text == null) return;
+
             DataRow newRowItem;
             newRowItem = m_dt.NewRow();
             newRowItem["Name"] = textBox1.Text;
             newRowItem["Time"] = textBox2.Text + "分";
             newRowItem["Path"] = textBox.Text;
+
             m_dt.Rows.Add(newRowItem);
 
             dataGrid.DataContext = m_dt;
