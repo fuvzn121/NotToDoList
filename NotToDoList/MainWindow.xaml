@@ -35,9 +35,6 @@
             <TextBox x:Name="textBox3" Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="511,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
             <Label x:Name="label5" Content="プロセス名" Grid.Column="1" HorizontalAlignment="Left" Margin="453,73,0,0" VerticalAlignment="Top" Height="25"/>
             <Button x:Name="button1" Content="監視" Grid.Column="1" HorizontalAlignment="Left" Margin="753,111,0,0" VerticalAlignment="Top" Width="75" Height="24" Click="taskKill"/>
-            <!--
-            <Button x:Name="button1" Content="決定" HorizontalAlignment="Left" VerticalAlignment="Top" Width="40" Grid.Column="1" Margin="686,76,0,0" Height="23" Click="processAdd"/>
-          -->
         </Grid>
     </Viewbox>
 </Window>
