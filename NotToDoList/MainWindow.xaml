@@ -5,32 +5,39 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NotToDoList"
         mc:Ignorable="d"
-        Title="NotToDoList" Height="662.5" Width="781.5">
+        Title="NotToDoList" Height="740.5" Width="858">
     <Viewbox Margin="-12,0,0,0" RenderTransformOrigin="0.573,0.583" Stretch="Fill">
-        <Grid Height="425" Width="625">
+        <Grid Height="539" Width="910">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="36*"/>
                 <ColumnDefinition Width="589*"/>
             </Grid.ColumnDefinitions>
-            <Label x:Name="label" Content="リスト" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="28,25,0,0" Height="30" Width="111" Grid.ColumnSpan="2"/>
+            <Label x:Name="label" Content="タスク登録" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="17,26,0,0" Height="32" Width="111" Grid.Column="1" FontSize="18"/>
             <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="89,73,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="405" IsReadOnly="True" Grid.Column="1"/>
-            <Button x:Name="show_button" Content="参照" HorizontalAlignment="Left" Margin="516,74,0,0" VerticalAlignment="Top" Width="48" Click="Show_Click" Height="23" RenderTransformOrigin="0.396,0.652" Grid.Column="1"/>
-            <Button x:Name="add_button" Content="登録" HorizontalAlignment="Left" Margin="17,148,0,0" VerticalAlignment="Top" Width="48" Height="23" Grid.Column="1"/>
-            <Button x:Name="del_button" Content="削除" HorizontalAlignment="Left" Margin="83,148,0,0" VerticalAlignment="Top" Width="48" Height="23"  Grid.Column="1" />
-            <TextBox x:Name="textBox1" Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="89,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <Label x:Name="label1" Content="登録名" Grid.Column="1" HorizontalAlignment="Left" Margin="17,112,0,0" VerticalAlignment="Top" Height="24"/>
-            <ComboBox x:Name="comboBox" Grid.Column="1" HorizontalAlignment="Left" Margin="257,113,0,0" VerticalAlignment="Top" Width="71" SelectionChanged="comboBox_SelectionChanged" Height="23"/>
-            <Label x:Name="label3" Content="時間" Grid.Column="1" HorizontalAlignment="Left" Margin="218,112,0,0" VerticalAlignment="Top" Height="24"/>
+            <Button x:Name="show_button" Content="参照" HorizontalAlignment="Left" Margin="499,73,0,0" VerticalAlignment="Top" Width="48" Click="Show_Click" Height="23" RenderTransformOrigin="0.396,0.652" Grid.Column="1"/>
+            <Button x:Name="add_button" Content="登録" HorizontalAlignment="Left" Margin="17,155,0,0" VerticalAlignment="Top" Width="48" Height="24" Grid.Column="1" Click="OnAddButtonClick"/>
+            <Button x:Name="del_button" Content="削除" HorizontalAlignment="Left" Margin="89,155,0,0" VerticalAlignment="Top" Width="48" Height="24"  Grid.Column="1" Click="OnDelButtonClick"/>
+            <TextBox x:Name="textBox1" Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="89,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="98" RenderTransformOrigin="-0.03,0.409"/>
+            <Label x:Name="label1" Content="名前" Grid.Column="1" HorizontalAlignment="Left" Margin="17,112,0,0" VerticalAlignment="Top" Height="24"/>
+            <Label x:Name="label3" Content="時間" Grid.Column="1" HorizontalAlignment="Left" Margin="214,112,0,0" VerticalAlignment="Top" Height="24"/>
             <Label x:Name="label2" Content="ファイル選択" Grid.Column="1" HorizontalAlignment="Left" Margin="17,73,0,0" VerticalAlignment="Top" Height="24"/>
-            <DataGrid x:Name="dataGrid" Grid.Column="1" HorizontalAlignment="Left" Margin="17,190,0,0" VerticalAlignment="Top" RenderTransformOrigin="-17.923,2.7" Height="225" Width="547">
+            <DataGrid x:Name="dataGrid" Grid.Column="1" HorizontalAlignment="Left" Margin="17,184,0,0" VerticalAlignment="Top" RenderTransformOrigin="-17.923,2.7" Height="316" Width="547" IsReadOnly="True"
+                  AutoGenerateColumns="False" DataContext="{Binding}" ItemsSource="{Binding}">
                 <DataGrid.Columns>
-                    <DataGridCheckBoxColumn Header="有効化"/>
-                    <DataGridTextColumn Header="名前"/>
-                    <DataGridComboBoxColumn Header="時間"/>
-                    <DataGridTextColumn Header="ファイルの場所"/>
-
+                    <DataGridTextColumn Header="起動状態" Width="60" Binding="{Binding State}"/>
+                    <DataGridTextColumn Header="名前" Width="180" Binding="{Binding Name}"/>
+                    <DataGridTextColumn Header="制限時間" Binding="{Binding Time}" Width="60"/>
+                    <DataGridTextColumn Header="プロセス名" Binding="{Binding Process}" Width="*"/>
                 </DataGrid.Columns>
             </DataGrid>
+            <TextBox x:Name="textBox2" Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="248,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="54" RenderTransformOrigin="0.284,0.409"/>
+            <Label x:Name="label4" Content="分" Grid.Column="1" HorizontalAlignment="Left" Margin="302,112,0,0" VerticalAlignment="Top" Height="24" RenderTransformOrigin="2.224,0.565"/>
+            <Button x:Name="button" Content="プロセス表示" Grid.Column="1" HorizontalAlignment="Left" Margin="599,76,0,0" VerticalAlignment="Top" Width="75" Height="23" RenderTransformOrigin="-1.218,0.334" Click="ShowProcess"/>
+            <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="388" VerticalAlignment="Top" Width="237" Grid.Column="1" Margin="599,112,0,0"/>
+            <Label x:Name="label_Copy" Content="実行中プロセス一覧" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="599,26,0,0" Height="32" Width="162" Grid.Column="1" FontSize="18"/>
+            <TextBox x:Name="textBox3" Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="427,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Label x:Name="label5" Content="プロセス名" Grid.Column="1" HorizontalAlignment="Left" Margin="368,112,0,0" VerticalAlignment="Top" Height="24"/>
+            <Button x:Name="button1" Content="決定" HorizontalAlignment="Left" VerticalAlignment="Top" Width="40" Grid.Column="1" Margin="686,76,0,0" Height="23" Click="processAdd"/>
 
         </Grid>
     </Viewbox>
