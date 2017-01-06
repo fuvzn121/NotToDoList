@@ -17,17 +17,6 @@ namespace NotToDoList {
             m_dt.Columns.Add(new DataColumn("Time", typeof(double)));
             m_dt.Columns.Add(new DataColumn("Process", typeof(string)));
         }
-        /*
-        private void Show_Click(object sender, RoutedEventArgs e) {
-            //ファイル名の取得
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.FileName = "";
-            ofd.DefaultExt = "*.*";
-            if (ofd.ShowDialog() == true) {
-               // textBox.Text = ofd.FileName;
-            }
-        }
-        */
 
         private void OnAddButtonClick(object sender, RoutedEventArgs e) {
 
